@@ -77,8 +77,8 @@ function SignIn({userData}) {
  
     const userFormData = Object.fromEntries(formData.entries());
     if(userData.email===userFormData.email){
-      console.log('userdata',userData.email,'formdata',userFormData.email)
-      userData.password===userFormData.password? Index(): Index();
+      //console.log('userdata',userData.email,'formdata',userFormData.email)
+      userData.password===userFormData.password? Index():changeStyle();
     }
     else{
       changeStyle();

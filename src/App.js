@@ -13,7 +13,6 @@ function App() {
   const [OrderItems,setOrderItems]=useState([]);
   const [count,setcount]=useState(0);
   
-  console.log("app",count)
   const userData = {
     'email':'abc@gmail.com',
     'password':'abc123'
@@ -28,26 +27,27 @@ function App() {
   }
   else{
     setCartItems([...cartItems,{...product,quantity:1}])
-
     setcount(cartItems.length+1);
-    console.log("ElseCartITem",cartItems.length,cartItems)
   }
 }
-const handleRemoveProduct =(product)=> {
+const handleRemoveProduct = (product)=> {
+
   const checkproduct = cartItems.find((item)=>item.id=== product.id);
+
   if(checkproduct.quantity === 1){
     setCartItems(cartItems.filter((item)=>item.id !== product.id));
-    setcount(cartItems.length);
+    setcount(0);
   }
   else{
     setCartItems(cartItems.map((item)=>item.id=== product.id?
     {...checkproduct,quantity:checkproduct.quantity-1}:item));
-    if(cartItems.length>0){setcount(cartItems.length)};
+    setcount(cartItems.length);
   }
  }
  const handleClearProduct=(product)=>{
   setCartItems(cartItems.filter((item)=>item.id !== product.id));
-  if(cartItems.length>0){setcount(cartItems.length)};
+  if(cartItems.length>0){setcount(cartItems.length)
+  };
  }
  const handleClearCart=()=>{
   setCartItems([]);
@@ -81,5 +81,6 @@ const handleRemoveProduct =(product)=> {
     </BrowserRouter>
   );
 }
+
 
 export default App;

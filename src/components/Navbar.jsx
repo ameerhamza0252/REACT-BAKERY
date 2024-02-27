@@ -63,7 +63,7 @@ function Navbar(cartcount) {
       <NavLinks style={{display:'flex',alignItems:'center',width:'30vw',justifyContent:'space-around',marginRight:'2rem'}}>
         <Link to="/" style={linkStyle}><StyleButton>Home</StyleButton></Link>
         <Link to="/Orders" style={linkStyle}><StyleButton>Orders</StyleButton></Link>
-        <Link to="/Cart" style={linkStyle}><StyleButton>Cart <span style={icon}>{Count()}</span></StyleButton></Link>
+        <Link to="/Cart" style={linkStyle}><StyleButton>Cart <span style={icon}>{cartcount.count}</span></StyleButton></Link>
         <Link to="/SignIn" style={linkStyle}><StyleButton>SignIn</StyleButton></Link>
         <Link to="/SignUp" style={linkStyle}><StyleButton>SignUp</StyleButton></Link>
       </NavLinks>
